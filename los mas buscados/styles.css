@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#d7bf8c;
+    min-height:100vh;
+    padding:2rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+header h1{
+    font-family:'Cinzel', serif;
+    font-size:clamp(1.8rem, 4vw, 3rem);
+    color:#4b2d17;
+}
+
+header p{
+    color:#5c4033;
+    margin-top:.5rem;
+    font-size:clamp(.9rem, 2vw, 1.1rem);
+}
+
+/* SLIDER LAYOUT */
+.slider{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    width:100%;
+}
+
+/* CONTAINER */
+.slider-container{
+    width:100%;
+    max-width:520px;
+    position:relative;
+}
+
+/* CARTEL */
+.cartel{
+    display:none;
+    background:#f2deb2;
+    border:10px solid #6b4226;
+    padding:1.5rem;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+
+.cartel.active{
+    display:block;
+    animation:fade .4s ease;
+}
+
+.cartel h2{
+    font-family:'Cinzel', serif;
+    font-size:clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom:1rem;
+}
+
+.cartel img{
+    width:100%;
+    height:auto;
+    max-height:420px;
+    object-fit:cover;
+    border:5px solid #4b2d17;
+}
+
+.cartel h3{
+    margin:1rem 0;
+    font-size:clamp(1.2rem, 3vw, 2rem);
+    color:#4b2d17;
+}
+
+.cartel p{
+    line-height:1.6;
+    margin-bottom:1rem;
+    font-size:clamp(.9rem, 2vw, 1rem);
+}
+
+.cartel span{
+    display:block;
+    font-size:clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight:bold;
+    color:darkred;
+    border-top:2px dashed #6b4226;
+    padding-top:1rem;
+}
+
+/* BOTONES */
+.btn{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    font-size:2rem;
+    cursor:pointer;
+    background:#6b4226;
+    color:white;
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* ANIMACION */
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateX(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* TABLET */
+@media (max-width: 900px){
+    body{
+        padding:1.5rem;
+    }
+
+    .slider-container{
+        max-width:90%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px){
+
+    .slider{
+        flex-direction:column;
+        gap:1rem;
+    }
+
+    .btn{
+        width:50px;
+        height:50px;
+        font-size:1.5rem;
+    }
+
+    .slider-container{
+        max-width:100%;
+    }
+
+    .cartel{
+        padding:1rem;
+        border-width:8px;
+    }
+
+    .cartel img{
+        max-height:320px;
+    }
+}
+
+/* MOBILE PEQUEÑO */
+@media (max-width: 400px){
+
+    body{
+        padding:1rem;
+    }
+
+    header h1{
+        font-size:1.5rem;
+    }
+
+    .btn{
+        width:45px;
+        height:45px;
+    }
+
+    .cartel img{
+        max-height:260px;
+    }
+}
